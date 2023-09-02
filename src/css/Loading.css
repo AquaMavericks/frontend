@@ -1,0 +1,23 @@
+.LoadingBackground{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoadingImg{
+    width: 8rem;
+    margin-top: 22rem;
+    margin-bottom: 25rem;
+    margin-left: 2rem;
+    max-width: 100%;
+    display:block;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+}
+
+.animate {
+    transform: scale(1.7); /* 애니메이션 스케일링 적용 */
+}
