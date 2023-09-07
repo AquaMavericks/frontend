@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import LoadingPage from './page/LoadingPage';
 import StartPage from './page/StartPage';
 import MainPage from './page/MainPage';
+import "../src/index.css";
 
 function App() {
   return (
