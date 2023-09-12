@@ -12,7 +12,12 @@
     margin-top: 0rem;
 }
 
-    
+.StartTitle{
+    font-size: larger;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}   
 
 .TopBar{
     margin-bottom: 3rem;

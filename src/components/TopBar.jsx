@@ -1,8 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 function HomeIcon() {
 
-    
 return(
     <div>
     
@@ -15,14 +14,17 @@ return(
           width="50"
           height="50"
           class="p-1"
-          alt="Rz Codes Logo"
+          alt="Logo"
         />
         <div class="mt-3 text-black">Aqua </div>
         <div class="mt-3 text-orange-400">mavericks</div>
       </a>
     </div>
     <Link to= '/start'>
-    <h4 className='mt-1 text-sm'>HOME</h4>
+    <img src = "https://cdn-icons-png.flaticon.com/512/7133/7133312.png"
+                width="30"
+                height="30"
+                alt="Home logo"></img>
     </Link>
   </nav>
   </body>
