@@ -1,0 +1,23 @@
+.Map1{
+    margin-top: 1rem;
+}
+
+.Map1Name{
+    font-size:x-large;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.Map1info{
+    font-size: larger;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+}
+
+.Map1info2{
+    color: red;
+    font-size: larger;
+}

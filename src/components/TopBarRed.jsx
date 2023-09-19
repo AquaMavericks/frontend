@@ -7,7 +7,7 @@ return(
     <div>
     
   <body>
-	 <nav class="lg:px-8 px-6 bg-white shadow-md flex flex-wrap items-center lg:py-0 py-1">
+	 <nav class="lg:px-8 px-6 bg-red-500 shadow-md flex flex-wrap items-center lg:py-0 py-1">
     <div class="flex-1 flex justify-between items-center">
       <a href="/" class="flex text-lg font-bold">
         <img

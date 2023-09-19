@@ -10,8 +10,8 @@ function Start() {
         
         <div className="HomeCategory">
             <TopBar/>
-            <h1 className="StartTitle">현재 동작중인 로봇</h1>
-            <ReLoad/>
+            <h1 className="StartTitle">현재 동작중인 로봇 </h1>
+            
             <HomeCategory/>
         </div>
         
