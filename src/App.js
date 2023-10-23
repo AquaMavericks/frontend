@@ -5,19 +5,25 @@ import MainPage from './page/MainPage';
 import RescuePage from './page/RescuePage';
 import RescuePage2 from './page/RescuePage2';
 import ReadyPage from './page/ReadyPage';
+import LoginPage from './page/LoginPage';
 import "../src/index.css";
+import {RecoilRoot} from "recoil";
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<LoadingPage />} />
-        <Route path="/start" element={<StartPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/rescue" element={<RescuePage />} />
-        <Route path="/rescue2" element={<RescuePage2 />} />
-        <Route path="/ready" element={<ReadyPage />} />
-      </Routes>
+      <RecoilRoot>
+        <Routes>
+          <Route path="/" element={<LoadingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/loading" element={<LoadingPage />} />
+          <Route path="/start/:admin_port_id" element={<StartPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/rescue" element={<RescuePage />} />
+          <Route path="/rescue2" element={<RescuePage2 />} />
+          <Route path="/ready" element={<ReadyPage />} />
+        </Routes>
+      </RecoilRoot>
     </div>
   );
 }

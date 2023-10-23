@@ -24,7 +24,7 @@ function Loading() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAnimationVisible(true);
-            navigate("/start");
+            navigate("/login");
         }, 1100); // 1.1초 후에 다음 페이지로 넘어가도록 설정
 
         return () => clearTimeout(timer);

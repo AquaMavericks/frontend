@@ -23,3 +23,8 @@
     margin-bottom: 3rem;
     
 }
+
+.drag{
+    overflow-y: scroll;
+    max-height: 35rem;
+}
