@@ -22,7 +22,7 @@ function OnOff(props) {
 
 
   const { robot } = props;
-
+  const robot_id = robot.id;
   robot.status = robot.robots_status === 0 ? "대기 중" : "구조 중";
   const inputRobotinfo = {
     id: robot.id,
@@ -48,7 +48,7 @@ function OnOff(props) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => handleImageClick('emerald')}>
-      <Link to="/rescue">
+      <Link to={`/rescue/${admin_name}/${robot_id}`}>
         <img
           className='h-40 w-40 rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110'
           src='https://static.vecteezy.com/system/resources/previews/014/488/616/original/emergency-siren-icon-hazard-warning-light-ambulance-route-alarm-png.png'
@@ -60,16 +60,21 @@ function OnOff(props) {
           {robot.id}번 로봇
         </h1>
 
-        <h1 className={`text-black font-bold ${
-        isHovered ? 'hover:text-red-500' : 'text-emerald-500' // 대기중일 때 텍스트 색상을 에메랄드로 변경
-      }`}>
-        {robot.status}
-      </h1>
+        {
+          robot.status === "대기 중" ? 
+            <h1 className={`text-black font-bold ${
+              isHovered ? 'hover:text-emerald-500' : 'text-emerald-500' // 대기중일 때 텍스트 색상을 에메랄드로 변경
+            }`}>
+            {robot.status}
+            </h1>
+            :
+            <h1 className={`text-black font-bold ${
+              isHovered ? 'hover:text-red-500' : 'text-red-500' // 구조중일 때 텍스트 색상을 레드로 변경
+            }`}>
+            {robot.status}
+            </h1>
+        }
       </div>
-      
-      
-      
-
     </button>
   );
 }

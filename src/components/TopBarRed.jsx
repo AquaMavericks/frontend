@@ -22,7 +22,7 @@ return(
       </a>
     </div>
     <ReLoad/>
-    <Link to= '/start'>
+    <Link to= '/'>
     <img src = "https://cdn-icons-png.flaticon.com/512/7133/7133312.png"
                 width="30"
                 height="30"

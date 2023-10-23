@@ -19,7 +19,7 @@ function App() {
           <Route path="/loading" element={<LoadingPage />} />
           <Route path="/start/:admin_port_id" element={<StartPage />} />
           <Route path="/main" element={<MainPage />} />
-          <Route path="/rescue" element={<RescuePage />} />
+          <Route path="/rescue/:admin_name/:robot_id" element={<RescuePage />} />
           <Route path="/rescue2" element={<RescuePage2 />} />
           <Route path="/ready" element={<ReadyPage />} />
         </Routes>

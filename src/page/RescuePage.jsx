@@ -3,28 +3,51 @@ import TopBarRed from "../components/TopBarRed";
 import TopBar from "../components/TopBar";
 import Map1 from "../css/Map1.css";
 import {useRecoilState} from 'recoil';
+import { useParams } from "react-router-dom";
 import {
     nameState,
     portState,
     robotState,
 } from '../Recoil';
-function Rescue (){
+import axios from 'axios';
+import { useEffect } from "react";
 
-    const [admin_name,setAdmin_name] = useRecoilState(nameState);
+function Rescue (props){
+
+    const {admin_name,robot_id} = useParams();
+
     const [admin_port,setAdmin_port] = useRecoilState(portState);
     const [robotinfo,setRobotinfo] = useRecoilState(robotState);
+    
+    const refresh = () =>{
+        axios.get('http://52.3.202.193:8000/v1/robot/view/detail/'+robot_id)
+        .then(response => {
+            console.log(response);
+            let inputRobotinfo = {
+                id: robot_id,
+                status: response.data.robots_status === 0 ? "대기 중" : "구조 중",
+            };
+            setRobotinfo(inputRobotinfo);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    }
 
-    const hash_port = admin_port === 0 ? "부산" : "울산";
-    const robot_status = robotinfo.status === 0 ? "대기 중" : "구조 중";
-
-
+    useEffect(()=>{
+        refresh()
+    },[robot_id])
     return(
         <div>
             {robotinfo.status === "대기 중" ? <TopBar/> : <TopBarRed/>}
-            <h1 className="Map1Name">{hash_port}항</h1>
+            <h1 className="Map1Name">
+            {
+                admin_port === 0 ? "부산" : "울산"
+            }
+            항</h1>
             <img className = 'Map1' src='https://github.com/SV-Summer-BootCamp-Team-F/.github/assets/113844225/8eb5a4bb-a652-49de-bf50-0f1a86c5ed36' alt="map1" />
             <h3 className="Map1info">Admin: {admin_name}</h3>
-            <h3 className="Map1info">{robotinfo.id}번 로봇</h3>
+            <h3 className="Map1info">{robot_id}번 로봇</h3>
             {
                 robotinfo.status === "대기 중" ? 
                     <h3 className="Map1info">
@@ -39,9 +62,25 @@ function Rescue (){
                         <span className="Map1info2">
                             {robotinfo.status}
                         </span>
+                        <h3>현재 로봇과의 거리: 25M</h3>
                     </h3>
+                    
             }
-            <h3 className="Map1info">현재 로봇과의 거리: 25M</h3>
+            {
+                !robotinfo.status === "대기 중" ? 
+                    <h3 className="Map1info">
+                        현재위치: 
+                        <span className="Map1info2">
+                            {robotinfo.location}
+                        </span>
+                        <h3 className="Map1info">현재 로봇과의 거리: 25M</h3>
+                    </h3>
+                    :           
+                    <h3>
+                        
+                    </h3>         
+            }
+            
         </div>
     );
 }
