@@ -23,7 +23,16 @@ function OnOff(props) {
 
   const { robot } = props;
   const robot_id = robot.id;
-  robot.status = robot.robots_status === 0 ? "대기 중" : "구조 중";
+  robot.status = 
+  robot.robots_status === 0 ? "대기 중" :
+  robot.robots_status === 1 ? "구조 중 - 해상 낙하 사고 발생" :
+  robot.robots_status === 2 ? "구조 중 - 피재자 거리 파악" :
+  robot.robots_status === 3 ? "구조 중 - 최단 거리 이동" :
+  robot.robots_status === 4 ? "구조 중 - 튜브 전달" :
+  robot.robots_status === 5 ? "구조 중 - 피재자 구조" :
+  robot.robots_status === 6 ? "구조 중 - 구조 완료" :
+                              "복귀 중"
+
   const inputRobotinfo = {
     id: robot.id,
     status: robot.status,
@@ -65,13 +74,13 @@ function OnOff(props) {
             <h1 className={`text-black font-bold ${
               isHovered ? 'hover:text-emerald-500' : 'text-emerald-500' // 대기중일 때 텍스트 색상을 에메랄드로 변경
             }`}>
-            {robot.status}
+            대기 중
             </h1>
             :
             <h1 className={`text-black font-bold ${
               isHovered ? 'hover:text-red-500' : 'text-red-500' // 구조중일 때 텍스트 색상을 레드로 변경
             }`}>
-            {robot.status}
+            구조 중
             </h1>
         }
       </div>
