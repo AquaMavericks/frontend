@@ -5,19 +5,15 @@ import '../css/Start.css';
 import { useRecoilState } from 'recoil';
 import {
   nameState,
-  portState,
   robotState,
 } from '../Recoil';
 
 
 function OnOff(props) {
-  const [emeraldRingVisible, setEmeraldRingVisible] = useState(false);
-  const [redRingVisible, setRedRingVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false); // 마우스 호버 상태 관리
 
-  const [admin_name,setAdmin_name] = useRecoilState(nameState);
-  const [admin_port,setAdmin_port] = useRecoilState(portState);
-  const [robotinfo,setRobotinfo] = useRecoilState(robotState);
+  const [isHovered, setIsHovered] = useState(false); // 마우스 호버 상태 관리
+  const [admin_name,] = useRecoilState(nameState);
+  const [,setRobotinfo] = useRecoilState(robotState);
 
 
 
