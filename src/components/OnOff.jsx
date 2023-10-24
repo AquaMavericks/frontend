@@ -30,8 +30,8 @@ function OnOff(props) {
   robot.robots_status === 3 ? "구조 중 - 최단 거리 이동" :
   robot.robots_status === 4 ? "구조 중 - 튜브 전달" :
   robot.robots_status === 5 ? "구조 중 - 피재자 구조" :
-  robot.robots_status === 6 ? "구조 중 - 구조 완료" :
-                              "복귀 중"
+  "구조 중 - 구조 완료"
+
 
   const inputRobotinfo = {
     id: robot.id,
