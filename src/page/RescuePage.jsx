@@ -32,8 +32,7 @@ function Rescue (props){
                     response.data.robots_status === 3 ? "구조 중 - 최단 거리 이동" :
                     response.data.robots_status === 4 ? "구조 중 - 튜브 전달" :
                     response.data.robots_status === 5 ? "구조 중 - 피재자 구조" :
-                    response.data.robots_status === 6 ? "구조 중 - 구조 완료" :
-                                                      "복귀 중"
+                    "구조 중 - 구조 완료" 
             };
             setRobotinfo(inputRobotinfo);
         })
