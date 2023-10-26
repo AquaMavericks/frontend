@@ -1,24 +1,8 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react'; 
-import axios from 'axios'; 
 import OnOff from './OnOff';
 import "../css/Start.css";
-import { useRecoilState } from 'recoil';
-import {
-    nameState,
-    portState,
-} from '../Recoil';
-
 function HomeCategory(props) {
-    
-    const [emeraldRingVisible, setEmeraldRingVisible] = useState(false);
-    const [redRingVisible, setRedRingVisible] = useState(false);
-    
-    const [admin_name,setAdmin_name] = useRecoilState(nameState);
-    const [admin_port,setAdmin_port] = useRecoilState(portState);
 
     const {robots} = props;
-
 
     return (
         <div>

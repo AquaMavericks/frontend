@@ -7,7 +7,7 @@ function Loading() {
     const navigate = useNavigate();
 
     const [animationVisible, setAnimationVisible] = useState(false);
-    const [animationCompleted, setAnimationCompleted] = useState(false);
+    const [, setAnimationCompleted] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {

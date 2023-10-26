@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { Link } from 'react-router-dom';
 import TopBar from "../components/TopBar"
 import HomeCategory from "../components/HomeCategory"
-import ReLoad from "../components/ReLoad"
 import "../css/Start.css";
 import axios from 'axios';
 import { useParams } from "react-router-dom";

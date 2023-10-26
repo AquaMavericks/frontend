@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import TopBar from "../components/TopBar";
+import "../css/Login.css";
 import axios from 'axios';
 import { useRecoilState } from "recoil";
 import { nameState, portState } from "../Recoil";
@@ -12,8 +13,8 @@ function Login() {
     const navigate = useNavigate();
     const [token, setToken] = useState("");
     
-    const [admin_name,setAdmin_name] = useRecoilState(nameState);
-    const [admin_port,setAdmin_port] = useRecoilState(portState);
+    const [,setAdmin_name] = useRecoilState(nameState);
+    const [,setAdmin_port] = useRecoilState(portState);
 
     const handleUsernameChange = (e) => {
         setToken(e.target.value);

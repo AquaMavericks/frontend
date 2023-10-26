@@ -1,23 +1,9 @@
 import React from "react";
-import {useRecoilState} from 'recoil';
-import {
-    nameState,
-    portState,
-    robotState,
-} from '../Recoil';
-
 function ReLoad() {
-  const [admin_name,setAdmin_name] = useRecoilState(nameState);
-  const [admin_port,setAdmin_port] = useRecoilState(portState);
-  const [robotinfo,setRobotinfo] = useRecoilState(robotState);
 
   const handleReload = () => {
     window.location.reload();
     
-  };
-
-  const goStart = () => {
-    window.location.href = "/start";
   };
 
   return (
