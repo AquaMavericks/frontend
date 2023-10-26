@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import "../css/Login.css";
+import TopBar from "../components/TopBar";
 import axios from 'axios';
 import { useRecoilState } from "recoil";
 import { nameState, portState } from "../Recoil";
+import "../css/Login.css";
+
+
 function Login() {
     const navigate = useNavigate();
     const [token, setToken] = useState("");
@@ -41,6 +44,7 @@ function Login() {
 
     return(
         <div>
+            <TopBar/>
             <div className="Login">
                 <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/93089183/277179027-4bae23f5-ba71-432b-84e2-55f70cb61b94.png" alt="Aqua Maverick Logo" />
             </div>

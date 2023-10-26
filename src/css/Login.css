@@ -1,3 +1,25 @@
+@keyframes twinkling {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.05;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+
 .Login{
     display: flex;
     flex-direction: column;
@@ -8,27 +30,40 @@
 
 .LoginInputFrame{
     height: 100px;
-    margin-top: 200px;
+    margin-top: 150px;
     align-items: center;
     align-content: center;
-    padding: 5px;
+    padding: 20px;
 }
 
 .LoginInput{
-    border-radius: 10px;
+    border-radius: 20px;
     height: 50px;
-    width : 230px;
-    border: 2px solid #000000;
+    margin-left: 1rem;
+    width : 95%;
+    border: 2.5px solid #000000;
 }
 
 .LoginButton{
-    width: 100px;
+    display: fixed;
+    width: 95%;
     height: 50px;
-    margin-left: 3rem;
+    margin-left: 1rem;
+    margin-top: 3rem;
     border-radius: 10px;
-    border: 3px solid #000000;
-    background-color: #000000;
+    background-color: black;
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
+    
 }
+
+.LoginButton:hover {
+    background-color:#f16b0b;
+    transition: 0.3s;
+    transform: scale(1.05); 
+}
+
+.Login img {
+    animation: twinkling 2.2s infinite;
+  }
