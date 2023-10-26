@@ -44,6 +44,15 @@ function Rescue (props){
     useEffect(()=>{
         refresh()
     },[robot_id])
+
+    useEffect(()=>{
+        const intervalId = setInterval(() => {
+            refresh();
+        },3000);
+
+        return () => clearInterval(intervalId);
+    },[])
+    
     return(
         <div>
             {robotinfo.status === "대기 중" |  robotinfo.status === "복귀 중" ? <TopBar/> : <TopBarRed/>}
